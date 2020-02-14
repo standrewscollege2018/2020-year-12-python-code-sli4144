@@ -38,10 +38,11 @@ display_all_students()
 #change the detail of the student
 #get details of which student to change and what the updated name is
 student_number = int(input("enter the number of the student you want to change:"))
-new_name = input("enter the new name of the student:")
-
+change_name = input("enter the nchange name of the student:")
+change_credit = int(input("enter the change credit for the student:"))
+change = [change_name, change_credit]
 #change student details
-names[student_number - 1] = new_name
+names[student_number - 1] = change
 
 # call function
 display_all_students()
