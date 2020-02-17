@@ -1,7 +1,7 @@
 # function display all students in the list
 def display_all_students():
-    for i in range(0, len(names)):
-        print(i+1,names[i])    
+    for i in range(0, len(names for i in range(0,1)))):
+        print(i+1,names[i[0],[1]])    
     
 
 
