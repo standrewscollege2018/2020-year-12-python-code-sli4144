@@ -8,11 +8,16 @@ def all_books():
         print (book+1, books[book])
 #call function
 all_books()
+
 # add a new book into the list
 newtitle = input("enter the title of the new book:")
 newauthor = input("enter the author of the new book:")
 newprice = float(input("enter the price of the new book:"))
 new_book = [newtitle, newauthor, newprice]
 books.append (new_book)
+
+# delete a book 
+book = int(input("enter the number of the book you want to delete:"))
+del books[book-1]
 #call function
 all_books()
