@@ -19,5 +19,13 @@ books.append (new_book)
 # delete a book 
 book = int(input("enter the number of the book you want to delete:"))
 del books[book-1]
+
+#update a book detail
+update = int(input("enter the number of book you want to update:"))
+updatetitle = input("update the title:")
+updateauther = input("update the auther:")
+updateprice = float(input("update the price:"))
+update_book = [updatetitle, updateauther, updateprice]
+books[update-1] = update_book
 #call function
 all_books()
