@@ -35,3 +35,29 @@ def update():
     books[update-1] = update_book
 #call function
 show_books()
+
+
+
+#create a list which store all the functions of the program that allows user to chose what they want to do with the books
+#[chose+1]
+programm_functions = [[1,"add a new book"], [2,"delet a book"], [3,"update a book"], [4,"quit"]]
+for i in range (len(programm_functions)):
+    print (programm_functions[i])
+
+#ask the user and store as a variable
+chose = int(input("enter the number of the funciton you chose"))
+choice = chose + 1 
+# add a new book
+if choice == 1:
+    add() 
+    
+# delet a book
+elif choice == 2:
+   delete()
+# uplate a book
+elif choice == 3:
+   update()
+# ends the program
+elif choice == 4:
+    ask == False
+    print("see u")
