@@ -1,11 +1,9 @@
 #list store the departure location
-depart_loc = ["1. Auckland", "2. Wellington","3. Christchurch"]
-
-#list store the destination
-destin_loc = ["1.Sydney", "2.Tonga", "3.Shanghai", " 4.London"]
+#list in list , each list store the departure location and extra cost
+depart_loc = [["1. Auckland", 0], ["2. Wellington", 50], ["3. Christchurch",75]]
 
 #list store the price of the destination
-price = ["1.Sydney - $326", "2.Tonga - $378", "3.Shanghai - $1436", " 4.London - $2376 "]
+destin_loc = [["1.Sydney", "Sydney - $326", 326], ["2.Tonga ", "Tonga  - $378", 378], ["3.Shanghai", "Shanghai - $1436", 1436], [" 4.London", "London - $2376 ", 2376]]
 
 #list store all the functionality of the programm
 program_funct = ["1.departure location", "2.destination", "3. price of the destination", "4.book your flight", "5.exit"]
@@ -18,37 +16,39 @@ program_funct = ["1.departure location", "2.destination", "3. price of the desti
 # funtion that show all the departure location
 def show_dep():
     for x in range(len(depart_loc)):
-        print (depart_loc[x])
+        print (depart_loc[x][0])
 
 # function that show all the destination 
 def show_des():
     for i in range(len(destin_loc)):
-        print (destin_loc[i])
+        print (destin_loc[i][0])
 
 # function that show price list
 def show_price():
-    for p in range(len(price)):
-        print(price[p])
+    for p in range(len(destin_loc)):
+        print(price[p][1])
         
 # book tickets function
 def ticket_booking():
     departure = int(input("enter the index of your departure location:"))
     destination = int(input("enter the index of your detination:"))
     nights = int(input("how many nights are you planning to stay?"))
-    print("Your flights are departure in", depart_loc[departure+1],", and your destination is", destin_loc[destination+1],"and you booked", nights,"nights.")
-    ticket_detail = [departure, destinaiton,nights]
+    print("Your flight is depart in", depart_loc[departure-1][0],", and your destination is", destin_loc[destination-1][0],"and you booked", nights,"nights.")
+    depart_loc[departure-1][1] = price_one 
+    destin_loc[destinaiton-1][2] = price_two
     
     
 #cost calculation
 def cal_cost():
+    if nights >= 3:
+        total_cost = (price_one + price_two)*0.8 *1.15
+        print("Your total cost is", total_cost,".")
+     else:
+        total_cost = (price_one + price_two)* 1.15
+        print("Your total cost is", total_cost,".")
     
-
-
-
-
-
-
-
+        
+        
 
 
 
@@ -56,4 +56,21 @@ def cal_cost():
 print ("welcome to the programm, what can we help?")
 print (program_funct)
 do = int(input("enter the number of function helps you:")):
-    if do == 
+    if do == 1:
+        show_dep()
+    
+    if do == 2:
+        show_des()
+        
+    if do == 3:
+        show_price()
+    
+    if do == 4:
+        ticket_booking()
+    
+    elif do == 5:
+        print("see u")
+        break        
+        
+        
+        
