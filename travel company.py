@@ -13,6 +13,12 @@ program_funct = ["1.departure location", "2.destination", "3. price of the desti
 
 
           # functions 
+
+#function that show all the functionaility of the programm 
+def show_funct():
+    for f in range (len(program_funct)):
+        print (program_funct[f])    
+
 # funtion that show all the departure location
 def show_dep():
     for x in range(len(depart_loc)):
@@ -50,27 +56,31 @@ def cal_cost():
         
         
 
-
-
-
-print ("welcome to the programm, what can we help?")
-print (program_funct)
-do = int(input("enter the number of function helps you:")):
-    if do == 1:
-        show_dep()
-    
-    if do == 2:
-        show_des()
+# while loop start the progamm
+while True:
+    print ("welcome to the programm, what can we help?")
+    #print all the functionality
+    show_funct()
+    #user choose the function ,only true when input between 1 to 5
+    ask = 0
+    while ask > 0, and < 6 :
+        try:
+            do = int(input("enter the number of function helps you:")):
+        if do == 1:
+            show_dep()
         
-    if do == 3:
-        show_price()
-    
-    if do == 4:
-        ticket_booking()
-    
-    elif do == 5:
-        print("see u")
-        break        
+        if do == 2:
+            show_des()
+            
+        if do == 3:
+            show_price()
         
+        if do == 4:
+            ticket_booking()
         
-        
+        elif do == 5:
+            print("see u")
+            break        
+            
+            
+            
