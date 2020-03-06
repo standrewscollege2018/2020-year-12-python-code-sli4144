@@ -12,7 +12,7 @@ program_funct = ["1.departure location", "2.destination", "3. price of the desti
 
 
 
-          # functions 
+# functions 
 
 #function that show all the functionaility of the programm 
 def show_funct():
@@ -32,7 +32,7 @@ def show_des():
 # function that show price list
 def show_price():
     for p in range(len(destin_loc)):
-        print(price[p][1])
+        print(destin_loc[p][1])
         
 # book tickets function
 def ticket_booking():
@@ -49,38 +49,39 @@ def cal_cost():
     if nights >= 3:
         total_cost = (price_one + price_two)*0.8 *1.15
         print("Your total cost is", total_cost,".")
-     else:
-        total_cost = (price_one + price_two)* 1.15
-        print("Your total cost is", total_cost,".")
+    else:
+        total_cost = price_one* 1.15 + price_two* 1.15
+        print ("Your total cost is", total_cost,".")
+
+def menu_choice():
     
+    #user choose the function ,only true when input between 1 to 5  
+    if user_input == 1:
+        show_dep()
         
+    if user_input == 2:
+        show_des()
+            
+    if user_input == 3:
+        show_price()
         
+    if user_input == 4:
+        ticket_booking()
+        print("See you!")
+        
+#print all the functionality
+show_funct()
+
+user_input = int(input("welcome to the programm, what can we help?"))
+menu_choice()
 
 # while loop start the progamm
-while True:
-    print ("welcome to the programm, what can we help?")
-    #print all the functionality
-    show_funct()
-    #user choose the function ,only true when input between 1 to 5
-    ask = 0
-    while ask > 0, and < 6 :
-        try:
-            do = int(input("enter the number of function helps you:")):
-        if do == 1:
-            show_dep()
+while user_input != 5:   
+    
+    user_input = int(input("welcome to the programm, what can we help?"))
+    menu_choice()
         
-        if do == 2:
-            show_des()
-            
-        if do == 3:
-            show_price()
-        
-        if do == 4:
-            ticket_booking()
-        
-        elif do == 5:
-            print("see u")
-            break        
+
             
             
             
